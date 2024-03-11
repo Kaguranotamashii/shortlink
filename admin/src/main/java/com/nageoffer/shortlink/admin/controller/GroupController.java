@@ -24,13 +24,13 @@ public class GroupController {
      * @param request
      * @return
      */
-    @PostMapping("/api/short-link/v1/group")
+    @PostMapping("/api/short-link/admin/v1/group")
     public Result<Void> save(@RequestBody ShortLinkGroupSaveReqDTO request){
         groupService.saveGroup(request.getName());
         return Results.success();
     }
 
-    @GetMapping("/api/short-link/v1/group")
+    @GetMapping("/api/short-link/admin/v1/group")
     public Result<List<ShortLinkGroupRespDTO>> listGroup(){
 
         return Results.success(groupService.listGroup());
@@ -41,7 +41,7 @@ public class GroupController {
      * @param
      * @return
      */
-    @PutMapping("/api/short-link/v1/group")
+    @PutMapping("/api/short-link/admin/v1/group")
     public Result<Void> updateGroup(@RequestBody ShortLinkGroupUpdateReqDTO request){
         groupService.updateGroup(request);
         return Results.success();
@@ -52,7 +52,7 @@ public class GroupController {
      * @param
      * @return
      */
-    @DeleteMapping("/api/short-link/v1/group")
+    @DeleteMapping("/api/short-link/admin/v1/group")
     public Result<Void> updateGroup(@RequestBody  String request){
         groupService.deleteGroup(request);
         return Results.success();
