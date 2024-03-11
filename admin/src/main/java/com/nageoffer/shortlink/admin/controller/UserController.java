@@ -76,15 +76,9 @@ public class UserController {
         return Results.success();
     }
 
-    /**
-     * 登
-     * @param request
-     * @return
-     */
     @PostMapping("/api/short-link/v1/user/login")
-    public Result<UserLoginRespDTO> login(@RequestBody UserLoginReqDTO request) {
-        userService.login(request);
-        return Results.success(null);
+    public Result<UserLoginRespDTO> login(@RequestBody UserLoginReqDTO requestParam) {
+        return Results.success(userService.login(requestParam));
     }
 
     /**
@@ -103,5 +97,6 @@ public class UserController {
         userService.logout(username, token);
         return Results.success();
     }
+
 
 }

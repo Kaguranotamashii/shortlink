@@ -15,24 +15,48 @@
  * limitations under the License.
  */
 
-package com.nageoffer.shortlink.admin.dto.req;
+package com.nageoffer.shortlink.admin.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.nageoffer.shortlink.admin.common.database.BaseDO;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * 用户登录请求参数
+ * 短链接分组实体
  * 公众号：马丁玩编程，回复：加群，添加马哥微信（备注：link）获取项目资料
  */
 @Data
-public class UserLoginReqDTO {
+@TableName("t_group")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class GroupDO extends BaseDO {
 
     /**
-     * 用户名
+     * id
+     */
+    private Long id;
+
+    /**
+     * 分组标识
+     */
+    private String gid;
+
+    /**
+     * 分组名称
+     */
+    private String name;
+
+    /**
+     * 创建分组用户名
      */
     private String username;
 
     /**
-     * 密码
+     * 分组排序
      */
-    private String password;
+    private Integer sortOrder;
 }

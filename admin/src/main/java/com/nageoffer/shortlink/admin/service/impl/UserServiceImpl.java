@@ -110,7 +110,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserDO> implements U
 
     @Override
     public UserLoginRespDTO login(UserLoginReqDTO requestParam) {
-
         LambdaQueryWrapper<UserDO> queryWrapper = Wrappers.lambdaQuery(UserDO.class)
                 .eq(UserDO::getUsername, requestParam.getUsername())
                 .eq(UserDO::getPassword, requestParam.getPassword())
@@ -119,17 +118,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserDO> implements U
         if (userDO == null) {
             throw new ClientException("用户不存在");
         }
-
-
         Map<Object, Object> hasLoginMap = stringRedisTemplate.opsForHash().entries(USER_LOGIN_KEY + requestParam.getUsername());
         if (CollUtil.isNotEmpty(hasLoginMap)) {
             stringRedisTemplate.expire(USER_LOGIN_KEY + requestParam.getUsername(), 30L, TimeUnit.MINUTES);
-
             String token = hasLoginMap.keySet().stream()
                     .findFirst()
                     .map(Object::toString)
                     .orElseThrow(() -> new ClientException("用户登录错误"));
-
             return new UserLoginRespDTO(token);
         }
         /**
@@ -141,7 +136,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserDO> implements U
          */
         String uuid = UUID.randomUUID().toString();
         stringRedisTemplate.opsForHash().put(USER_LOGIN_KEY + requestParam.getUsername(), uuid, JSON.toJSONString(userDO));
-        JSON.toJSONString(uuid);
         stringRedisTemplate.expire(USER_LOGIN_KEY + requestParam.getUsername(), 30L, TimeUnit.MINUTES);
         return new UserLoginRespDTO(uuid);
     }
