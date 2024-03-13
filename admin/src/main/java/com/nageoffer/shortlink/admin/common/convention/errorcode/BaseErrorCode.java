@@ -1,7 +1,5 @@
 package com.nageoffer.shortlink.admin.common.convention.errorcode;
 
-import com.nageoffer.shortlink.admin.common.convention.errorcode.IErrorCode;
-
 /**
  * 基础错误码定义
  */

@@ -1,6 +1,5 @@
 package com.nageoffer.shortlink.project.common.convention.exception;
 
-
 import com.nageoffer.shortlink.project.common.convention.errorcode.BaseErrorCode;
 import com.nageoffer.shortlink.project.common.convention.errorcode.IErrorCode;
 

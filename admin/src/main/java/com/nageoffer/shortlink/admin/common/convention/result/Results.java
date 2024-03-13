@@ -2,7 +2,6 @@ package com.nageoffer.shortlink.admin.common.convention.result;
 
 import com.nageoffer.shortlink.admin.common.convention.errorcode.BaseErrorCode;
 import com.nageoffer.shortlink.admin.common.convention.exception.AbstractException;
-import com.nageoffer.shortlink.admin.common.convention.result.Result;
 
 import java.util.Optional;
 

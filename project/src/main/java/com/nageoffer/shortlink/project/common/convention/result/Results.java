@@ -1,7 +1,5 @@
 package com.nageoffer.shortlink.project.common.convention.result;
 
-
-
 import com.nageoffer.shortlink.project.common.convention.errorcode.BaseErrorCode;
 import com.nageoffer.shortlink.project.common.convention.exception.AbstractException;
 

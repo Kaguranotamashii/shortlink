@@ -2,7 +2,6 @@ package com.nageoffer.shortlink.admin.common.convention.exception;
 
 import com.nageoffer.shortlink.admin.common.convention.errorcode.BaseErrorCode;
 import com.nageoffer.shortlink.admin.common.convention.errorcode.IErrorCode;
-import com.nageoffer.shortlink.admin.common.convention.exception.AbstractException;
 
 /**
  * 远程服务调用异常

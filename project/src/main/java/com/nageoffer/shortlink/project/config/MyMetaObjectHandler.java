@@ -2,15 +2,12 @@ package com.nageoffer.shortlink.project.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Primary
-@Component(value = "myMetaObjectHandlerByAdmin")
+@Component
 public class MyMetaObjectHandler implements MetaObjectHandler {
-
 
     @Override
     public void insertFill(MetaObject metaObject) {
